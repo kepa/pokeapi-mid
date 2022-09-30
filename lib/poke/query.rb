@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
-require 'poke'
+require 'poke-api-v2'
 
-module poke
+module Poke
   class Query
+
+    def initialize(pokemon)
+      @pokemon = PokeApi.get(pokemon: pokemon)
+    end
 
   end
 end
