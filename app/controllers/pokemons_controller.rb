@@ -14,4 +14,7 @@ class PokemonsController < ApplicationController
 
 
   end
+
+  def home
+  end
 end
