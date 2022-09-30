@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Pokemons", type: :request do
-  describe "GET /info" do
+  describe "GET /pokemons" do
     xit "returns http success" do
-      get "/pokemons/info"
-      expect(response).to have_http_status(:success)
+      get '/api/pokemons', :params =>{:pokemon_name => 'ditto'}
+      expect(response).to contain(["imposter", "limber"])
     end
   end
 

@@ -1,11 +1,17 @@
+require 'poke/query'
+
 class PokemonsController < ApplicationController
   def info
 
-    @pokemon = PokeApi.get(pokemon: 'ditto')
+    begin
 
-    respond_to do |format|
-        format.json { render :json => @pokemon.abilities }
-      end
+      @pokemon = ::Poke::Query.new(params[:pokemon_name])
+      render :json => @pokemon, status: :ok
+
+    rescue JSON::ParserError => e
+      render json: { error: e.to_s}, status: :not_found
+    end
+
 
   end
 end
