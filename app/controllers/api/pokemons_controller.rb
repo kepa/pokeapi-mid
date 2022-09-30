@@ -10,7 +10,7 @@ class Api::PokemonsController < ApplicationController
       render :json => @pokemon, status: :ok
 
     rescue JSON::ParserError => e
-      render json: { error: e.to_s}, status: :not_found
+      render json: { error: e.to_s}, status: 404
     end
 
 
