@@ -4,7 +4,7 @@ require 'poke-api-v2'
 
 module Poke
   class Query
-    attr_reader :name
+    attr_reader :name, :pokemon
 
 
     def initialize(pokemon)
@@ -24,7 +24,8 @@ module Poke
     def as_json(options={})
       {
         :name => self.name,
-        :abilities => self.abilities
+        :abilities => self.abilities,
+        :sprite => self.pokemon.sprites.front_default
       }
     end
 

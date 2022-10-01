@@ -17,7 +17,6 @@ const onSearch = (value) => {
 
 export default () => (
   <Layout className="layout">
-    <Header />
     <Content>
       <div className="site-layout-content" >
         <Title>Pokedex: Abilities</Title>
@@ -30,6 +29,6 @@ export default () => (
         <Pokemon poke_name={searchQuery} />
        </div> 
     </Content>
-    <Footer style={{ textAlign: "center" }}>Lucas Falbo ©2022.</Footer>
+    
   </Layout>
 );

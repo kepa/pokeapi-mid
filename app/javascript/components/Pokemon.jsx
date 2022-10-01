@@ -64,6 +64,7 @@ class Pokemon extends React.Component {
       return (
         <div className="poke-desc">
           <Title>{pokemon.name}</Title>
+          <img className="sprite" src={pokemon.sprite}/>
           <ul>
             {pokemon.abilities.map( ability => (
                 <li key={ability.id}>
