@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
 * System dependencies
+  * Ruby `3.1.2`
+    * bundler `>= 2.3.13`
+    * Rails `>= 7.0.4`
+  * Node.js `>= 16.15.1`
+    * npm `>= 8.11.0`
+    * yarn `>= 1.22.0`
+  * PostgreSQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * Deployment
+  	* https://stormy-taiga-19377.herokuapp.com
