@@ -14,14 +14,16 @@ class Pokemon extends React.Component {
       isLoaded: false,
       pokemon: null
     };
-  }
+
+    this.loadPoke = this.loadPoke.bind(this)
+  };
   
   componentDidMount() {
-    this.loadPoke(this.props.poke_name)
-  }
+    this.loadPoke(this.props.poke_name);
+  };
 
-  loadPoke = (query) => {
-    const url = `api/pokemons?pokemon_name=${query}`;
+  loadPoke(q){
+    const url = `api/pokemons?pokemon_name=${q}`;
     fetch(url)
       .then(res => res.json())
       .then(
@@ -43,32 +45,22 @@ class Pokemon extends React.Component {
         },
 
       )
-  }  
-
-  reloadSection = (query) =>{
-    this.setState({});
-  }
+  };  
 
   render() {
     const { error, isLoaded, pokemon } = this.state;
 
     if (error) {
       return (
-        <>
-          <Search
-            placeholder="Serach pokemon"
-            enterButton="Search"
-            size="large"
-            onSearch={this.loadPoke}
-          />
+        
           <Text type="danger">Error: {error.error}</Text>
-        </>
+        
       );
     } else if (!isLoaded) {
       return <Text type="secondary">Loading...</Text>;
     } else {
       return (
-        <>
+        <div>
           <Search
             placeholder="Serach pokemon"
             enterButton="Search"
@@ -98,7 +90,7 @@ class Pokemon extends React.Component {
               )}
           </ul>
         </div>
-      </>
+      </div>
       );
     }
   }
