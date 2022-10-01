@@ -6,7 +6,7 @@ class Api::PokemonsController < ApplicationController
 
     begin
 
-      @pokemon = ::Poke::Query.new(params[:pokemon_name])
+      @pokemon = ::Poke::Query.new(params[:pokemon_name].downcase)
       render :json => @pokemon, status: :ok
 
     rescue JSON::ParserError => e

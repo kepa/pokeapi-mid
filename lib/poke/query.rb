@@ -15,7 +15,7 @@ module Poke
 
     def abilities
       @pokemon.abilities.each do |ability|
-        @abilities << ability.ability.name
+        @abilities << ability.ability.name.titlecase
       end
 
       @abilities.sort
