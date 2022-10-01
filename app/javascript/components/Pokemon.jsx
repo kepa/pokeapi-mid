@@ -1,9 +1,8 @@
 import React from "react";
 import { Layout, Typography, Input, Divider } from "antd";
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Text } = Typography;
 const { Search } = Input;
-// const [q, setQ] = useState("");
 
 class Pokemon extends React.Component {
 
@@ -18,7 +17,6 @@ class Pokemon extends React.Component {
   }
   
   componentDidMount() {
-     //this.loadPoke('blastoise')
     this.loadPoke(this.props.poke_name)
   }
 

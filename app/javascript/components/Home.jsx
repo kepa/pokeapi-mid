@@ -1,13 +1,12 @@
-import { Layout, Typography, Input, Col, Row } from "antd";
+import { Layout, Typography, Col, Row } from "antd";
 
-import React, { useState }  from "react";
+import React from "react";
 import "antd/dist/antd.css";
 import Header from "./Header";
 import Pokemon from "./Pokemon";
 
-const { Content, Footer } = Layout;
-const { Title, Paragraph, Text, Link } = Typography;
-const { Search } = Input;
+const { Content } = Layout;
+const { Title } = Typography;
 
 let searchQuery = "blastoise";
 
