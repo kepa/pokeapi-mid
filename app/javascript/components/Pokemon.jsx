@@ -1,7 +1,8 @@
 import React from "react";
-import { Layout, Typography } from "antd";
+import { Layout, Typography, Input } from "antd";
 
 const { Title, Paragraph, Text, Link } = Typography;
+const { Search } = Input;
 
 class Pokemon extends React.Component {
 
@@ -15,7 +16,8 @@ class Pokemon extends React.Component {
   }
   
   componentDidMount() {
-    this.loadPoke('blastoise')
+    // this.loadPoke('blastoise')
+    this.loadPoke(this.props.poke_name)
   }
 
   loadPoke = (query) => {
@@ -43,9 +45,17 @@ class Pokemon extends React.Component {
       )
   }  
 
+  // function reloadSection(query){
+  //   this.setState({});
+  // }
+
   render() {
     const { error, isLoaded, pokemon } = this.state;
-    console.log(this.state)
+    console.log(this.state);
+
+    <div>
+
+    </div>
     if (error) {
       return <Text type="danger">Error: {error.error}</Text>;
     } else if (!isLoaded) {
