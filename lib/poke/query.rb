@@ -6,9 +6,8 @@ module Poke
   class Query
     attr_reader :name, :pokemon
 
-
     def initialize(pokemon)
-      @pokemon = PokeApi.get(pokemon: pokemon)
+      @pokemon = PokeApi.get(pokemon:)
       @name = pokemon.titlecase
       @abilities = []
     end
@@ -21,13 +20,12 @@ module Poke
       @abilities.sort
     end
 
-    def as_json(options={})
+    def as_json(_options = {})
       {
-        :name => self.name,
-        :abilities => self.abilities,
-        :sprite => self.pokemon.sprites.front_default
+        name:,
+        abilities:,
+        sprite: pokemon.sprites.front_default
       }
     end
-
   end
 end
