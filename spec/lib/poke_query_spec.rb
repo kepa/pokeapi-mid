@@ -30,7 +30,7 @@ RSpec.describe 'Querying PokeAPI' do
 
     it 'should return a list of abilities in alphabetical order' do
       poke = Poke::Query.new('ditto')
-      expect(poke.abilities).to eql(%w[imposter limber])
+      expect(poke.abilities).to eql(%w[Imposter Limber])
     end
   end
 
