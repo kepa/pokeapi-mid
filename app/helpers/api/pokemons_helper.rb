@@ -1,2 +1,6 @@
-module Api::PokemonsHelper
+# frozen_string_literal: true
+
+module Api
+  module PokemonsHelper
+  end
 end
