@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Typography, Input } from "antd";
+import { Layout, Typography, Input, Divider } from "antd";
 
 const { Title, Paragraph, Text, Link } = Typography;
 const { Search } = Input;
@@ -63,9 +63,16 @@ class Pokemon extends React.Component {
     } else {
       return (
         <div className="poke-desc">
-          <Title>{pokemon.name}</Title>
-          <img className="sprite" src={pokemon.sprite}/>
-          <ul>
+          <div className="poke-desc-header">
+            <Title>{pokemon.name}</Title>
+            <img className="sprite" src={pokemon.sprite}/>
+          </div>
+          
+          <Divider />
+
+          <Title level={3}>Main abilities:</Title>
+
+          <ul className="poke-desc-list">
             {pokemon.abilities.map( ability => (
                 <li key={ability.id}>
                   {ability}

@@ -1,4 +1,4 @@
-import { Layout, Typography, Input } from "antd";
+import { Layout, Typography, Input, Col, Row } from "antd";
 
 import React from "react";
 import "antd/dist/antd.css";
@@ -16,19 +16,32 @@ const onSearch = (value) => {
 };
 
 export default () => (
+  
+  
   <Layout className="layout">
     <Content>
-      <div className="site-layout-content" >
-        <Title>Pokedex: Abilities</Title>
-        <Search
-        placeholder="input search text"
-        enterButton="Search"
-        size="large"
-        onSearch={onSearch}
-        />
-        <Pokemon poke_name={searchQuery} />
-       </div> 
+    
+    <Row>
+      <Col span={8}/> 
+
+      <Col span={8}>  
+        <div className="content" >
+          <Title>Pokedex: Abilities</Title>
+          <Search
+          placeholder="Serach pokemon"
+          enterButton="Search"
+          size="large"
+          onSearch={onSearch}
+          />
+          <Pokemon poke_name={searchQuery} />
+         </div>
+       </Col>
+
+      <Col span={8}/>
+      </Row>
+
     </Content>
     
   </Layout>
+
 );
